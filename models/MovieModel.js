@@ -1,10 +1,11 @@
+
+require('dotenv').config();
+// Crea el cliente de Supabase
 const { createClient } = require('@supabase/supabase-js');
 
-
-import { createClient } from '@supabase/supabase-js'
-const supabaseUrl = 'https://nnphligeatzlxcfwsyvv.supabase.co'
-const supabaseKey = process.env.SUPABASE_KEY
-const supabase = createClient(supabaseUrl, supabaseKey)
+const supabaseKey = process.env.SUPABASE_KEY;
+const supabaseUrl = process.env.SUPABASE_URL;
+const supabase = createClient(supabaseUrl, supabaseKey);
 
 // Modelo de película para interactuar con la base de datos
 const MovieModel = {

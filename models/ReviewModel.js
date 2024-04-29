@@ -1,10 +1,9 @@
-// reviewModel.js
-
+require('dotenv').config();
+// Crea el cliente de Supabase
 const { createClient } = require('@supabase/supabase-js');
 
-// Crea el cliente de Supabase
-const supabaseUrl = 'https://nnphligeatzlxcfwsyvv.supabase.co';
 const supabaseKey = process.env.SUPABASE_KEY;
+const supabaseUrl = process.env.SUPABASE_URL;
 const supabase = createClient(supabaseUrl, supabaseKey);
 
 // Modelo de reseña para interactuar con la base de datos

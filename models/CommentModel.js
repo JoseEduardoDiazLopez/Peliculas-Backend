@@ -1,12 +1,11 @@
 // commentModel.js
-
-
-const { createClient } = require('@supabase/supabase-js');
-
+require('dotenv').config();
 // Crea el cliente de Supabase
-const supabaseUrl = 'https://nnphligeatzlxcfwsyvv.supabase.co';
+const { createClient } = require('@supabase/supabase-js');
 const supabaseKey = process.env.SUPABASE_KEY;
+const supabaseUrl = process.env.SUPABASE_URL;
 const supabase = createClient(supabaseUrl, supabaseKey);
+
 
 // Modelo de comentario para interactuar con la base de datos
 const CommentModel = {
