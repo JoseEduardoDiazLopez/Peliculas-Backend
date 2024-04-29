@@ -11,10 +11,13 @@ const ProfileModel = {
   // Obtener todos los perfiles
   getAllProfiles: async () => {
     try {
+      console.log("Consultando perfiles...");
       const { data, error } = await supabase.from('perfiles').select('*');
       if (error) throw new Error(error.message);
+      console.log("Perfiles obtenidos:", data);
       return data;
     } catch (error) {
+      console.error("Error al obtener los perfiles:", error.message);
       throw new Error('Error al obtener los perfiles de la base de datos');
     }
   },
